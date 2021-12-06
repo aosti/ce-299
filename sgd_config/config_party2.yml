@@ -1,0 +1,30 @@
+aggregator:
+  ip: 127.0.0.1
+  port: 5000
+connection:
+  info:
+    ip: 127.0.0.1
+    port: 8087
+    tls_config:
+      enable: false
+  name: FlaskConnection
+  path: ibmfl.connection.flask_connection
+  sync: false
+data:
+  info:
+    npz_file: C:\Users\Andre\Documents\ce-299\federated-learning-lib\examples\data\mnist\random\data_party2.npz
+  name: MnistSklearnDataHandler
+  path: ibmfl.util.data_handlers.mnist_sklearn_data_handler
+local_training:
+  name: LocalTrainingHandler
+  path: ibmfl.party.training.local_training_handler
+model:
+  name: SklearnSGDFLModel
+  path: ibmfl.model.sklearn_SGD_linear_fl_model
+  spec:
+    model_definition: examples\configs\iter_avg\sklearn\model_architecture.pickle
+privacy:
+  metrics: true
+protocol_handler:
+  name: PartyProtocolHandler
+  path: ibmfl.party.party_protocol_handler
